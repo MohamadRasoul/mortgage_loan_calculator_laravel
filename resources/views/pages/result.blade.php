@@ -1,4 +1,4 @@
-<x-layout>
+<x-app-layout>
 
 
     <x-loan-calculator-info />
@@ -8,4 +8,4 @@
     <x-table title=" Extra Payment" />
 
 
-</x-layout>
+</x-app-layout>

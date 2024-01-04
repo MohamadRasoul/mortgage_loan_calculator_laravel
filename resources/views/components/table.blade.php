@@ -3,7 +3,7 @@
 
 {{-- Table --}}
 <div class="w-full mb-4 ">
-    <div class="w-full p-4 bg-white shadow-lg rounded-2xl dark:bg-gray-700">
+    <div class="w-full p-4 bg-white shadow-lg rounded-2xl">
         <!-- TW Elements is free under AGPL, with commercial license required for specific uses. See more details: https://tw-elements.com/license/ and contact us for queries at tailwind@mdbootstrap.com -->
         <div class="py-8">
             <div class="flex flex-row justify-between w-full mb-1 sm:mb-0">

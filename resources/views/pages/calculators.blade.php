@@ -1,9 +1,6 @@
-<x-layout>
+<x-app-layout>
 
 
+    <x-form />
 
-                    {{-- Form --}}
-                    <x-form/>
-                    {{-- End Form --}}
-
-</x-layout>
+</x-app-layout>

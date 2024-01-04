@@ -1,6 +1,6 @@
  {{-- Form --}}
  <div class="w-full mb-4 ">
-     <div class="w-full p-4 bg-white shadow-lg rounded-2xl dark:bg-gray-700">
+     <div class="w-full p-4 bg-white shadow-lg rounded-2xl">
          <form>
              <div class="space-y-12">
                  <div class="pb-12 border-b border-gray-900/10">
@@ -31,9 +31,9 @@
                              class="grid grid-cols-1 pb-12 border-b col-span-full gap-x-6 gap-y-8 sm:grid-cols-6 border-gray-900/10">
                              <div class="sm:col-span-3">
                                  <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">
-                                    Annual Interest Rate
-                                    <span class="text-sm text-gray-400"> ( in percentage % )</span>
-                                </label>
+                                     Annual Interest Rate
+                                     <span class="text-sm text-gray-400"> ( in percentage % )</span>
+                                 </label>
                                  <div class="mt-2">
                                      <input type="number" name="first-name" id="first-name" autocomplete="given-name"
                                          class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
@@ -42,8 +42,8 @@
 
                              <div class="sm:col-span-3">
                                  <label for="last-name" class="block text-sm font-medium leading-6 text-gray-900">
-                                    Loan Term
-                                    <span class="text-sm text-gray-400"> ( in years )</span>
+                                     Loan Term
+                                     <span class="text-sm text-gray-400"> ( in years )</span>
                                  </label>
                                  <div class="mt-2">
                                      <input type="number" name="last-name" id="last-name" autocomplete="family-name"
@@ -54,10 +54,10 @@
 
                          <div class="pb-12 col-span-full ">
                              <label for="street-address" class="block text-sm font-medium leading-6 text-gray-900">
-                                Monthly Fixed Extra Payment
-                                <span class="text-sm text-gray-400"> ( optional )</span>
+                                 Monthly Fixed Extra Payment
+                                 <span class="text-sm text-gray-400"> ( optional )</span>
 
-                            </label>
+                             </label>
                              <div class="mt-2">
                                  <input type="number" name="street-address" id="street-address"
                                      autocomplete="street-address"

@@ -1,5 +1,5 @@
 {{-- Table --}}
-<div class="w-full mb-4 bg-white shadow-lg rounded-2xl dark:bg-gray-700">
+<div class="w-full mb-4 bg-white shadow-lg rounded-2xl">
 
         <div class="py-5 px-7 sm:px-6">
             <h3 class="text-lg font-medium leading-6 text-gray-900">
