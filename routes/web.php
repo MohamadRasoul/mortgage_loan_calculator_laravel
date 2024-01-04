@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::redirect('/','calculators');
+Route::view('/calculators','pages.calculators');
+Route::view('/calculators/result','pages.result');
