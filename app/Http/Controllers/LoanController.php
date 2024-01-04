@@ -13,7 +13,13 @@ class LoanController extends Controller
      */
     public function index()
     {
-        //
+        $user = \Auth::user();
+
+        return view('pages.loans',
+            [
+                'loans' => $user->loans
+            ]
+        );
     }
 
     /**

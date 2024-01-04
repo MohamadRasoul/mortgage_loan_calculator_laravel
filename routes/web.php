@@ -27,7 +27,7 @@ Route::group(
     ],
     function () {
 
-        Route::view('', 'pages.loans')->name('index');
+        Route::get('', [\App\Http\Controllers\LoanController::class,'index'])->name('index');
         Route::view('/calculator', 'pages.calculators')->name('calculator');
         Route::view('/calculator/result', 'pages.result')->name('result');
     }
