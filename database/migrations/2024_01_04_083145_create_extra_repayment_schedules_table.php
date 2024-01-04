@@ -23,7 +23,6 @@ return new class extends Migration
             $table->double('extra_repayment_made');
             $table->double('ending_balance_after');
             $table->double('extra_repayment');
-            $table->double('remaining_loan_term_after_extra_repayment');
 
             $table->foreignIdFor(\App\Models\Loan::class)->constrained()->cascadeOnDelete();
 

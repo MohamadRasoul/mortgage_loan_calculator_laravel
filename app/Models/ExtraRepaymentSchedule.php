@@ -20,7 +20,6 @@ class ExtraRepaymentSchedule extends Model
         'extra_repayment_made',
         'ending_balance_after',
         'extra_repayment',
-        'remaining_loan_term_after_extra_repayment',
         'loan_id'
     ];
 }
