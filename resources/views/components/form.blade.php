@@ -1,6 +1,6 @@
  {{-- Form --}}
- <div class="w-full mb-4 ">
-     <div class="w-full p-4 bg-white shadow-lg rounded-2xl">
+
+    <x-card>
          <form>
              <div class="space-y-12">
                  <div class="pb-12 border-b border-gray-900/10">
@@ -76,6 +76,7 @@
                      class="px-3 py-2 text-sm font-semibold text-white bg-indigo-600 rounded-md shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
              </div>
          </form>
-     </div>
- </div>
+
+    </x-card>
+
  {{-- End Form --}}

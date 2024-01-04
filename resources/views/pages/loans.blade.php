@@ -6,11 +6,7 @@
     </x-slot>
 
 
-    <div class="w-full mx-auto ">
-        <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
-            <div class="w-full p-6 text-gray-900">
-                {{ __("You're logged in!") }}
-            </div>
-        </div>
-    </div>
+    <x-card>
+        {{ __("You're logged in!") }}
+    </x-card>
 </x-app-layout>
