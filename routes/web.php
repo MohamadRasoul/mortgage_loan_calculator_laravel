@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::redirect('/','calculators');
-Route::view('/calculators','pages.calculators');
-Route::view('/calculators/result','pages.result');
+
+Route::redirect('/', 'loan')->name('dashboard');
+
+
+
+Route::group(
+    [
+        'middleware' => 'auth',
+        'prefix'=>'loan',
+        'as'=>'loan.'
+    ],
+    function () {
+
+        Route::view('', 'pages.loans')->name('index');
+        Route::view('/calculator', 'pages.calculators')->name('calculator');
+        Route::view('/calculator/result', 'pages.result')->name('result');
+    }
+);
+
+require __DIR__ . '/auth.php';
