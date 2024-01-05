@@ -22,19 +22,9 @@ class DatabaseSeeder extends Seeder
             'password' => '12345678',
         ]);
 
+//        $this->run([
+//            LoanSeeder::class
+//        ]);
 
-        Loan::factory()
-            ->count(3)
-            ->has(
-                LoanAmortizationSchedule::factory()
-                    ->count(50)
-                    ->sequence(fn(Sequence $sequence) => ['month_number' => (($sequence->index) % 12) + 1])
-            )
-            ->has(
-                ExtraRepaymentSchedule::factory()
-                    ->count(50)
-                    ->sequence(fn(Sequence $sequence) => ['month_number' => (($sequence->index) % 12) + 1])
-            )
-            ->create();
     }
 }
