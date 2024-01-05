@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -17,9 +18,46 @@ class ExtraRepaymentSchedule extends Model
         'principal_component',
         'interest_component',
         'ending_balance',
-        'extra_repayment_made',
-        'ending_balance_after',
-        'extra_repayment',
         'loan_id'
     ];
+
+
+
+    protected function startingBalance(): Attribute
+    {
+        return Attribute::make(
+            get: fn($value, array $attributes) => round($value, 2),
+        );
+    }
+
+    protected function monthlyPayment(): Attribute
+    {
+        return Attribute::make(
+            get: fn($value, array $attributes) => round($value, 2),
+        );
+    }
+
+    protected function principalComponent(): Attribute
+    {
+        return Attribute::make(
+            get: fn($value, array $attributes) => round($value, 2),
+        );
+    }
+
+    protected function interestComponent(): Attribute
+    {
+        return Attribute::make(
+            get: fn($value, array $attributes) => round($value, 2),
+        );
+    }
+    protected function endingBalance(): Attribute
+    {
+        return Attribute::make(
+            get: fn($value, array $attributes) => round($value, 2),
+        );
+    }
+
+
+
+
 }
