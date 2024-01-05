@@ -22,10 +22,10 @@ class StoreLoanRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'loan_amount' => ['required'],
-            'loan_term' => ['required'],
-            'interest_rate' => ['required'],
-            'monthly_fixed_extra_payment' => ['nullable'],
+            'loan_amount' => ['required','numeric','min:1000'],
+            'loan_term' => ['required','numeric','min:1'],
+            'interest_rate' => ['required','numeric','min:1','max:99'],
+            'monthly_fixed_extra_payment' => ['nullable','numeric','min:10','lt:loan_amount'],
         ];
     }
 

@@ -21,6 +21,8 @@
                                  <input type="number" name="loan_amount" id="loan_amount"
                                      autocomplete="loan_amount"
                                      class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                 <x-input-error :messages="$errors->get('loan_amount')" class="mt-2" />
+
                              </div>
                          </div>
                          <div
@@ -33,6 +35,8 @@
                                  <div class="mt-2">
                                      <input type="number" name="interest_rate" id="interest_rate" autocomplete="interest_rate"
                                          class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                     <x-input-error :messages="$errors->get('interest_rate')" class="mt-2" />
+
                                  </div>
                              </div>
 
@@ -44,6 +48,8 @@
                                  <div class="mt-2">
                                      <input type="number" name="loan_term" id="loan_term" autocomplete="loan_term"
                                          class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                     <x-input-error :messages="$errors->get('loan_term')" class="mt-2" />
+
                                  </div>
                              </div>
                          </div>
@@ -58,6 +64,8 @@
                                  <input type="number" name="monthly_fixed_extra_payment" id="monthly_fixed_extra_payment"
                                      autocomplete="monthly_fixed_extra_payment"
                                      class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                 <x-input-error :messages="$errors->get('monthly_fixed_extra_payment')" class="mt-2" />
+
                              </div>
                          </div>
 
