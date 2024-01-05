@@ -31,7 +31,10 @@ Route::group(
         Route::get('{loan}/show',  [\App\Http\Controllers\LoanController::class,'show'])->name('show');
 
         Route::get('/calculator', [\App\Http\Controllers\LoanController::class,'create'])->name('calculator');
-        Route::post('/calculator', [\App\Http\Controllers\LoanController::class,'store'])->name('calculator');
+
+        Route::post('/calculator', [\App\Http\Controllers\LoanController::class,'store'])
+            ->name('calculator')
+            ->middleware('transaction');
 
     }
 );
