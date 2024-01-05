@@ -22,9 +22,9 @@ class DatabaseSeeder extends Seeder
             'password' => '12345678',
         ]);
 
-//        $this->run([
-//            LoanSeeder::class
-//        ]);
+        $this->call([
+            LoanSeeder::class
+        ]);
 
     }
 }
