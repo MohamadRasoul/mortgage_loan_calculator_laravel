@@ -83,7 +83,7 @@
                                         <span aria-hidden="true"
                                               class="absolute inset-0 bg-green-200 rounded-full opacity-50">
                                         </span>
-                                        <a class="relative cursor-pointer" href={{ route('loan.result') }}>
+                                        <a class="relative cursor-pointer" href={{ route('loan.show', $loan) }}>
                                             show
                                         </a>
                                     </span>

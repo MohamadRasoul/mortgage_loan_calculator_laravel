@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Loan\StoreLoanRequest;
 use App\Http\Requests\Loan\UpdateLoanRequest;
 use App\Models\Loan;
+use App\RepaymentSchedule\ExtraRepaymentSchedule;
+use App\RepaymentSchedule\RepaymentScheduleDirector;
+use App\RepaymentSchedule\LoanRepaymentSchedule;
 
 class LoanController extends Controller
 {
@@ -27,7 +30,7 @@ class LoanController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.calculators');
     }
 
     /**
@@ -35,7 +38,14 @@ class LoanController extends Controller
      */
     public function store(StoreLoanRequest $request)
     {
-        //
+        $user = \Auth::user();
+
+        $loan = $user->loans()->create($request->validated());
+        RepaymentScheduleDirector::handle($loan);
+
+        $loan->load(['loanAmortizationSchedules','extraRepaymentSchedules','user']);
+
+        return to_route('loan.show',$loan);
     }
 
     /**
@@ -43,30 +53,8 @@ class LoanController extends Controller
      */
     public function show(Loan $loan)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Loan $loan)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateLoanRequest $request, Loan $loan)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Loan $loan)
-    {
-        //
+        return view('pages.result',[
+            'loan' => $loan
+        ]);
     }
 }

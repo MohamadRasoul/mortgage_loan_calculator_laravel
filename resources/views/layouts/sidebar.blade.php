@@ -48,7 +48,7 @@
             </div>
             <div>
                 <a class="flex items-center justify-start w-full p-4 my-2 font-thin text-blue-500 uppercase transition-colors duration-200
-                {{ !(request()->routeIs('loan.calculator')||request()->routeIs('loan.result')) ?: 'border-r-4 border-blue-500 bg-gradient-to-r from-white to-blue-100' }}"
+                {{ !(request()->routeIs('loan.calculator')||request()->routeIs('loan.show')) ?: 'border-r-4 border-blue-500 bg-gradient-to-r from-white to-blue-100' }}"
                     href={{route('loan.calculator')}}>
                     <span class="text-left">
                         <svg width="20" height="20" fill="currentColor" viewBox="0 0 2048 1792"
