@@ -43,8 +43,6 @@ class LoanController extends Controller
         $loan = $user->loans()->create($request->validated());
         RepaymentScheduleDirector::handle($loan);
 
-        $loan->load(['loanAmortizationSchedules','extraRepaymentSchedules','user']);
-
         return to_route('loan.show',$loan);
     }
 
@@ -53,6 +51,8 @@ class LoanController extends Controller
      */
     public function show(Loan $loan)
     {
+        $loan->load(['loanAmortizationSchedules','extraRepaymentSchedules','user']);
+
         return view('pages.result',[
             'loan' => $loan
         ]);

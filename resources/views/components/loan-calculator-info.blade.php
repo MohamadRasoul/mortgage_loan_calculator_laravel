@@ -37,7 +37,7 @@
                         {{ $loan->loanAmortizationSchedules->first()->monthly_payment}}
                     </dd>
                     <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                        {{$loan->extraRepaymentSchedules->first()->monthly_payment}}
+                        {{$loan->extraRepaymentSchedules->first()?->monthly_payment}}
                     </dd>
                 </div>
                 <div class="py-5 border-b px-7 sm:grid sm:grid-cols-6 sm:gap-4 sm:px-6 border-gray-900/10">
@@ -48,7 +48,7 @@
                         {{round($loan->total_payment,2)}}
                     </dd>
                     <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                        {{round($loan->total_payment_after_extra_repayment,2)}}
+                        {{$loan->monthly_fixed_extra_payment > 0 ? round($loan->total_payment_after_extra_repayment,2):""}}
                     </dd>
                 </div>
                 <div class="py-5 border-b px-7 sm:grid sm:grid-cols-6 sm:gap-4 sm:px-6 border-gray-900/10">
@@ -59,7 +59,7 @@
 
                     </dd>
                     <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                        {{round($loan->total_payment - $loan->total_payment_after_extra_repayment,2)}}
+                        {{$loan->monthly_fixed_extra_payment > 0 ? round($loan->total_payment - $loan->total_payment_after_extra_repayment,2):""}}
                     </dd>
                 </div>
                 <div class="py-5 border-b px-7 sm:grid sm:grid-cols-6 sm:gap-4 sm:px-6 border-gray-900/10">
@@ -70,7 +70,7 @@
                         {{convertDecimalToYearsMonths($loan->loan_term)}}
                     </dd>
                     <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                        {{convertDecimalToYearsMonths($loan->loan_term_after_extra_repayment)}}
+                        {{ convertDecimalToYearsMonths($loan->loan_term_after_extra_repayment)}}
 
                     </dd>
                 </div>
@@ -82,7 +82,7 @@
 
                     </dd>
                     <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                        {{convertDecimalToYearsMonths($loan->loan_term - $loan->loan_term_after_extra_repayment)}}
+                        {{$loan->monthly_fixed_extra_payment > 0 ? convertDecimalToYearsMonths($loan->loan_term - $loan->loan_term_after_extra_repayment):""}}
                     </dd>
                 </div>
             </dl>
