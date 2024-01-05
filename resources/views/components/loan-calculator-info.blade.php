@@ -1,10 +1,17 @@
 {{-- Table --}}
 <div class="w-full mb-4 bg-white shadow-lg rounded-2xl">
 
-        <div class="py-5 px-7 sm:px-6">
+        <div class="py-5 px-7 sm:px-6 flex flex-row justify-between">
             <h3 class="text-lg font-medium leading-6 text-gray-900">
                 {{$loan->user->name}}
             </h3>
+            <div>
+                <a class="flex-shrink-0 px-4 py-2 text-base font-semibold text-white bg-blue-600 rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-blue-200"
+                   href={{route('loan.calculator')}}
+                >
+                    New Loan Clac
+                </a>
+            </div>
         </div>
 
 
