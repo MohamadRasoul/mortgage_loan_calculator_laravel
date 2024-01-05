@@ -13,16 +13,12 @@ return new class extends Migration
     {
         Schema::create('extra_repayment_schedules', function (Blueprint $table) {
             $table->id();
-            $table->tinyInteger('month_number'); //TODO : make it enum
+            $table->integer('month_number'); //TODO : make it enum
             $table->double('starting_balance');
             $table->double('monthly_payment');
             $table->double('principal_component');
             $table->double('interest_component');
             $table->double('ending_balance');
-
-            $table->double('extra_repayment_made');
-            $table->double('ending_balance_after');
-            $table->double('extra_repayment');
 
             $table->foreignIdFor(\App\Models\Loan::class)->constrained()->cascadeOnDelete();
 

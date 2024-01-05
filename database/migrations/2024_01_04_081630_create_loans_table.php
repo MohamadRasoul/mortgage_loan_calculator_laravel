@@ -17,8 +17,11 @@ return new class extends Migration
             $table->integer('loan_term');
             $table->float('interest_rate');
 
-            $table->double('Monthly_fixed_extra_payment')->nullable();
-            $table->double('remaining_loan_term_after_extra_repayment')->nullable();
+            $table->double('total_payment')->nullable();
+
+            $table->double('monthly_fixed_extra_payment')->nullable();
+            $table->double('total_payment_after_extra_repayment')->nullable();
+            $table->double('loan_term_after_extra_repayment')->nullable();
 
 
             $table->foreignIdFor(\App\Models\User::class)->constrained()->cascadeOnDelete();

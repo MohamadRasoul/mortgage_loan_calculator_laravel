@@ -12,7 +12,7 @@ return new class extends Migration {
     {
         Schema::create('loan_amortization_schedules', function (Blueprint $table) {
             $table->id();
-            $table->tinyInteger('month_number');
+            $table->integer('month_number');
             $table->double('starting_balance');
             $table->double('monthly_payment');
             $table->double('principal_component');
